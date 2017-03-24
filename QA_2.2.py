@@ -15,7 +15,7 @@ def indata(lablev):
     data = raw_input()
     while data != '#':
         #判断是否通过编号输入，是的话转换成对应的病症名称
-        if int(data) > 0 and int(data) <= len(lablev):
+        if 0< int(data) and int(data) <= 12:
             data = lablev[int(data)-1]
         ill_list.append(data)
         ill_sum.append(data)
@@ -39,7 +39,9 @@ def illline(ill_list):
             ill1_line = illtoname_ill.readline().strip()            
             i = i + 1
         if flag == 0:
-            return 0
+            linenum = []
+            print '\n' + ill + u"不在病症库中"
+            break
     return linenum
 
 def nameline(name_list):
@@ -150,10 +152,9 @@ def all_Forecast():
 
 def judge(name_list,ill_list):
     linenum = illline(ill_list)
-    if  int(len(linenum)) == 0:
-        print '\n' + u"病症不在病症库中"
-        return 0
-    if len(name_list) == 0 :
+    if  len(linenum) == 0:
+        return 0        
+    if len(name_list) == 0 and len(linenum) > 0:
         name_list = name1_lines[linenum[0]].strip().split()
     for i in linenum:
         name_sum = name1_lines[i].strip().split()
