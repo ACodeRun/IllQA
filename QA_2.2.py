@@ -14,7 +14,7 @@ def indata(lablev):
     print u'请输入病症名称或者编号(#表示输入结束)：',
     data = raw_input()
     numlist = []
-    for i in range(1,len(lablev)):
+    for i in range(1,len(lablev)+1):
         numlist.append(str(i))
     while data != '#':
         #判断是否通过编号输入，是的话转换成对应的病症名称
