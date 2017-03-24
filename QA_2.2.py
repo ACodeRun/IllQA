@@ -15,7 +15,7 @@ def indata(lablev):
     data = raw_input()
     while data != '#':
         #判断是否通过编号输入，是的话转换成对应的病症名称
-        if 0< int(data) and int(data) <= 12:
+        if '0'< data and data < '9' and int(data) <= 12 and 0 < int(data):
             data = lablev[int(data)-1]
         ill_list.append(data)
         ill_sum.append(data)
