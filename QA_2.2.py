@@ -43,7 +43,9 @@ def illline(ill_list):
             i = i + 1
         if flag == 0:
             linenum = []
-            print '\n' + ill + u"不在病症库中"
+            print '\n',
+            print ill,
+            print u"不在病症库中"
             break
     return linenum
 
